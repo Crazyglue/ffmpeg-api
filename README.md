@@ -1,4 +1,4 @@
-# Steelseries Homework (Eric Dobroveanu)
+# FFMPEG-API
 ## Description
 
 Built using [Nest](https://github.com/nestjs/nest) framework for TypeScript.
