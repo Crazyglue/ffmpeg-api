@@ -15,10 +15,24 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+  describe('/ (GET)', () => {
+    describe('input params are successful', () => {
+      it('returns a 200 success and the correct string', () => {
+        const payload = {};
+        return request(app.getHttpServer())
+          .post('/')
+          .send(payload)
+          .expect(201)
+          .expect('Hello World!');
+      });
+    });
+
+    describe('input params extend passed end time', () => {
+      it('throws a HTTP 400: Invalid End Time error', () => {});
+    });
+
+    describe('input params have invalid coordinates', () => {
+      it('throws an HTTP 400: Invalid X,Y Coordinate', () => {});
+    });
   });
 });
