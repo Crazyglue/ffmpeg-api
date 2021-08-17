@@ -28,7 +28,7 @@ describe('AppController (e2e)', () => {
     });
 
     describe('input params extend passed end time', () => {
-      it('throws a HTTP 400: Invalid End Time error', () => {});
+      it('throws a HTTP 400: Invalid End Time', () => {});
     });
 
     describe('input params have invalid coordinates', () => {

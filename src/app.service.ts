@@ -1,8 +1,10 @@
+import { EffectPayload } from './dto/text-effect-input.dto';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getTextEffect(): string {
+  createTextEffect(textEffect: EffectPayload): string {
+    console.log('textEffect', textEffect);
     return 'Hello World!';
   }
 }

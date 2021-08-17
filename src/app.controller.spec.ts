@@ -16,7 +16,8 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getTextEffect()).toBe('Hello World!');
+      const payload = {} as any; // TODO: Dont use any
+      expect(appController.getTextEffect(payload)).toBe('Hello World!');
     });
   });
 });
