@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNumber, IsString, ValidateNested } from 'class-validator';
 
-enum EffectType {
+export enum EffectType {
   TEXT = 'text',
   VIDEO_OVERLAY = 'video_overlay',
 }
@@ -29,6 +29,38 @@ export class TextEffectPayload {
   fontColor: string;
 }
 
+export class VideoDetails {
+  @ApiProperty({
+    description: 'Input path of the video',
+  })
+  @IsString()
+  inputPath: string;
+
+  @ApiProperty({
+    description: 'Output path of the video',
+  })
+  @IsString()
+  outputPath: string;
+
+  @ApiProperty({
+    description: 'Width (in pixels) of the video',
+  })
+  @IsNumber()
+  width: number;
+
+  @ApiProperty({
+    description: 'Height (in pixels) of the video',
+  })
+  @IsNumber()
+  height: number;
+
+  @ApiProperty({
+    description: 'Duration (in seconds) of the video',
+  })
+  @IsNumber()
+  duration: number;
+}
+
 export class EffectPayload {
   @ApiProperty({
     description: 'The type of effect to generate an ffmpeg string for',
@@ -42,6 +74,12 @@ export class EffectPayload {
   })
   @ValidateNested()
   effectParameters: TextEffectPayload;
+
+  @ApiProperty({
+    description: 'The video details, including path, duration, and resolution',
+  })
+  @ValidateNested()
+  videoDetails: VideoDetails;
 
   @ApiProperty({
     description: 'The x-coordinate to place the effect',
