@@ -1,7 +1,7 @@
 # Steelseries Homework (Eric Dobroveanu)
 ## Description
 
-Built using [Nest](https://github.com/nestjs/nest) framework for TypeScript, and based off of the instructions provided in the "Moments Text Effects API.docx" file
+Built using [Nest](https://github.com/nestjs/nest) framework for TypeScript.
 
 ## Installation
 
